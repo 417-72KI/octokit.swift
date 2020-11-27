@@ -1,5 +1,5 @@
 language: swift
-osx_image: xcode11.3
+osx_image: xcode12.2
 sudo: false
 env:
   global:
@@ -11,9 +11,9 @@ matrix:
     - os: osx
       env: FASTLANE_LANE=code_coverage FASTLANE_ENV=default
     - os: osx
-      env: FASTLANE_ENV=ios12_2
+      env: FASTLANE_ENV=ios14_2
     - os: osx
-      env: FASTLANE_ENV=tvos12_2
+      env: FASTLANE_ENV=tvos14_2
     - os: osx
       env: FASTLANE_ENV=osx
     - os: linux
