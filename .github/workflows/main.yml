@@ -25,9 +25,15 @@ jobs:
             env: tvos
     steps:
       - uses: actions/checkout@v2
+      - name: cache Bundler
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-${{ matrix.env }}
       - name: install
         run: |
           gem install bundler
+          bundle config set --local path 'vendor/bundle'
           bundle install
       - name: test
         run: |
